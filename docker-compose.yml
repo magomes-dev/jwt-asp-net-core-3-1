@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pixforce:
+    image: ${DOCKER_REGISTRY-}pixforce
+    build:
+      context: .
+      dockerfile: Dockerfile
