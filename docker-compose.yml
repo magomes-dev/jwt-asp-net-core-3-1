@@ -1,6 +1,17 @@
 version: '3.4'
 
 services:
+  db:  
+    image: mcr.microsoft.com/mssql/server
+    environment:  
+      ACCEPT_EULA: Y  
+      SA_PASSWORD: "BigPassw0rd"  
+    volumes:  
+      - ./data/mssql:/var/opt/mssql3  
+    ports:  
+      - '1433:1433'  
+    expose:  
+      - 1433
   pixforce:
     image: ${DOCKER_REGISTRY-}pixforce
     build:
