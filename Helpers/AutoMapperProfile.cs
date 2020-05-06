@@ -1,6 +1,7 @@
 using AutoMapper;
 using PixForce.Entities;
-using PixForce.Models.Users;
+using PixForce.Dtos;
+using PixForce.Dtos.Param;
 
 namespace PixForce.Helpers
 {
@@ -8,9 +9,19 @@ namespace PixForce.Helpers
     {
         public AutoMapperProfile()
         {
-            CreateMap<User, UserModel>();
-            CreateMap<RegisterModel, User>();
-            CreateMap<UpdateModel, User>();
+            #region USER
+            CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
+            CreateMap<User, UserParamDto>();
+            CreateMap<UserParamDto, User>();
+            #endregion
+
+            #region
+            CreateMap<Estoque, EstoqueDto>();
+            CreateMap<EstoqueDto, Estoque>();
+            CreateMap<Estoque, EstoqueParamDto>();
+            CreateMap<EstoqueParamDto, Estoque>();
+            #endregion
         }
     }
 }

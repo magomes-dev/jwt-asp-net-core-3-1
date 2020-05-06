@@ -20,5 +20,6 @@ namespace PixForce.Helpers
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
     }
 }

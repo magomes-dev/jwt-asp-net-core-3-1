@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApi.Controllers
+namespace PixForce.Controllers
 {
     [ApiController]
     [Route("[controller]")]

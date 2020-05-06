@@ -11,7 +11,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using PixForce.Services;
 using PixForce.Entities;
-using PixForce.Models.Users;
+using PixForce.Dtos;
+using PixForce.Dtos.Param;
 
 namespace PixForce.Controllers
 {
@@ -36,7 +37,7 @@ namespace PixForce.Controllers
 
         [AllowAnonymous]
         [HttpPost("login")]
-        public IActionResult Authenticate([FromBody]AuthenticateModel model)
+        public IActionResult Authenticate([FromBody]LoginDto model)
         {
             var user = _userService.Login(model.Username, model.Password);
 
@@ -70,7 +71,7 @@ namespace PixForce.Controllers
 
         [AllowAnonymous]
         [HttpPost("cadastro")]
-        public IActionResult Register([FromBody]RegisterModel model)
+        public IActionResult Register([FromBody]UserParamDto model)
         {
             // map model to entity
             var user = _mapper.Map<User>(model);
@@ -93,7 +94,7 @@ namespace PixForce.Controllers
         public IActionResult GetAll()
         {
             var users = _userService.GetAll();
-            var model = _mapper.Map<IList<UserModel>>(users);
+            var model = _mapper.Map<IList<UserDto>>(users);
             return Ok(model);
         }
 
@@ -101,26 +102,23 @@ namespace PixForce.Controllers
         public IActionResult GetById(int id)
         {
             var user = _userService.GetById(id);
-            var model = _mapper.Map<UserModel>(user);
+            var model = _mapper.Map<UserDto>(user);
             return Ok(model);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody]UpdateModel model)
+        public IActionResult Update(int id, [FromBody]UserParamDto model)
         {
-            // map model to entity and set id
             var user = _mapper.Map<User>(model);
             user.Id = id;
 
             try
             {
-                // update user 
                 _userService.Update(user, model.Password);
                 return Ok();
             }
             catch (AppException ex)
             {
-                // return error message if there was an exception
                 return BadRequest(new { message = ex.Message });
             }
         }

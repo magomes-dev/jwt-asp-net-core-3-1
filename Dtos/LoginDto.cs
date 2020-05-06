@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace PixForce.Models.Users
+namespace PixForce.Dtos
 {
-    public class AuthenticateModel
+    public class LoginDto
     {
         [Required]
         public string Username { get; set; }
