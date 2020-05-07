@@ -37,6 +37,6 @@ O banco de dados SqlServer estará rodando na porta 1433.
 * **Matheus Gomes** - [LinkedIn](https://www.linkedin.com/in/matheusandradegomes/)
 
 ### Considerações Finais
-Por se tratar de uma pequena aplicação, optei concentrar tudo em um único projeto, mas mantendo uma organização nos diretórios baseado em responsabilidade.
+Por se tratar de uma pequena aplicação, optei por concentrar tudo em um único projeto, mas mantendo uma organização nos diretórios baseado em responsabilidade.
 Em aplicações maiores os indicado é separar os diretórios em DLLs.
 
