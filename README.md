@@ -1,4 +1,4 @@
-# PIX FORCE API
+# PIX FORCE API ![.NET Core](https://github.com/magomes-dev/jwt-asp-net-core-3-1/workflows/.NET%20Core/badge.svg)
 Implementação de uma API do ASP.NET Core 3.1 com autenticação JWT.
 
 ## Uso da API
