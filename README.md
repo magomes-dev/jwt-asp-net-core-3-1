@@ -33,6 +33,10 @@ Dentro da raiz do projeto
 Pronto, a API estará rodando localhost na porta 5000.
 O banco de dados SqlServer estará rodando na porta 1433.
 
+### Dados de inicialização
+Alguns usuários e registros de estoque são criados no banco de dados ao inicializar a aplicação.
+Os usuários podem ser consultados na rota pública da API localhost:5000/users. Utilize um dos usernames criados e a senha para login é "123456".
+
 ### Autor
 * **Matheus Gomes** - [LinkedIn](https://www.linkedin.com/in/matheusandradegomes/)
 
